@@ -113,6 +113,7 @@ async fn main() -> std::io::Result<()> {
     dotenv().ok();
     let db_url = env::var("DATABASE_URL").expect("Db_url doesn't find");
     let port = env::var("PORT").expect("Db_url doesn't find");
+    let port: u16 = port.parce().unwrap();
 
     let connection = ConnectionManager::<PgConnection>::new(db_url);
 

@@ -30,7 +30,7 @@ RUN apt-get update && apt-get install curl pkg-config libssl-dev build-essential
 WORKDIR /app
 
 ## Copiamos desde el otro contenedor, los archivos de la aplicación
-COPY --from=0 /app/target/release/rust-backend /app
+
 COPY /templates/ /app/templates
 COPY /statics/ /app/statics
 
